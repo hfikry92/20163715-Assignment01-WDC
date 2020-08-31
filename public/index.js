@@ -43,8 +43,8 @@ const users = [
 function generateHTMLTable(users){
    var table = document.getElementById("users_table");
    var row_i;
-   for (row_i = 1; row_i < users.length; row_i++) {
-      var row = table.insertRow(row_i);
+   for (row_i = 0; row_i < users.length; row_i++) {
+      var row = table.insertRow(row_i+1);
       var cell1 = row.insertCell(0);
       var cell2 = row.insertCell(1);
       var cell3 = row.insertCell(2);
