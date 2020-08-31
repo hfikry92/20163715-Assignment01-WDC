@@ -40,7 +40,11 @@ const users = [
     }
  ]
  
-function generateHTMLTable(users){
+function generateHTMLTable(users, sortByName){
+   if(sortByName == True){
+
+      users = _.sortBy(users, row => row.name)
+   }
    var table = document.getElementById("users_table");
    var row_i;
    for (row_i = 0; row_i < users.length; row_i++) {
