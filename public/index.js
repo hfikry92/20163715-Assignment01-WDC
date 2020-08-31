@@ -39,6 +39,24 @@ const users = [
        }
     }
  ]
+ 
+function generateHTMLTable(users){
+   var table = document.getElementById("users_table");
+   var row_i;
+   for (row_i = 1; row_i < users.length; row_i++) {
+      var row = table.insertRow(row_i);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+
+      cell1.innerHTML = users[row_i].personalInfo.name;
+      cell2.innerHTML = users[row_i].email;
+      cell3.innerHTML = users[row_i].personalInfo.address.state;
+
+    
+   }
+
+}
 
  function returnUsers(users) {    
         var filtered_users = []
@@ -46,5 +64,6 @@ const users = [
             filtered_users.push([user.personalInfo.name,user.email,user.personalInfo.address.state])
         });
         console.log(filtered_users)
+        generateHTMLTable(users)
         return filtered_users ;
 }
