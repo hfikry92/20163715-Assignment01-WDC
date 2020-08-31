@@ -45,5 +45,6 @@ const users = [
         users.forEach(user => {
             filtered_users.push([user.personalInfo.name,user.email,user.personalInfo.address.state])
         });
+        console.log(filtered_users)
         return filtered_users ;
 }
